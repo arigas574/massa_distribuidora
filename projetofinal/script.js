@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initialNavigation() {
         const hash = window.location.hash.substring(1);
-        const sectionToShow = hash || 'produtos';
+        const sectionToShow = hash || 'sobre';
         navigateTo(sectionToShow);
         history.replaceState({section: sectionToShow}, '', `#${sectionToShow}`);
     }

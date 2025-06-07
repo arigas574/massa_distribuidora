@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.section');
-    const navLinks = document.querySelectorAll('#main-header nav a');
-    const contatoButton = document.getElementById('btn-contato');
+    const navLinks = document.querySelectorAll('#main-nav a, #mobile-nav-menu a');
     const mainHeader = document.getElementById('main-header');
     const modalContato = document.getElementById('modal-contato');
+    const contatoButton = document.getElementById('btn-contato');
+    const contatoButtonMobile = document.getElementById('btn-contato-mobile');
     const searchInput = document.getElementById('search-input');
     const categoryFilterButtons = document.querySelectorAll('.category-filter-btn');
     let currentCategory = 'all';
@@ -11,11 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightbox = document.getElementById('image-lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileNavMenu = document.getElementById('mobile-nav-menu');
 
     function navigateTo(sectionId) {
+        if (mobileNavMenu.style.display === 'flex') {
+            mobileNavMenu.style.display = 'none';
+        }
+        
         sections.forEach(section => {
             section.classList.add('hidden');
-            section.classList.remove('fade-in');
         });
         const targetSection = document.getElementById(sectionId);
         if (targetSection) {
@@ -26,10 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const defaultSection = document.getElementById('produtos');
             if (defaultSection) {
                 defaultSection.classList.remove('hidden');
-                void defaultSection.offsetWidth;
-                defaultSection.classList.add('fade-in');
             }
         }
+         window.scrollTo(0, 0);
     }
 
     navLinks.forEach(link => {
@@ -37,34 +42,29 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const sectionId = this.dataset.section;
             navigateTo(sectionId);
-            try {
-                history.pushState(null, null, '#' + sectionId);
-            } catch (e) {
-                window.location.hash = sectionId;
-            }
+            history.pushState({section: sectionId}, '', `#${sectionId}`);
         });
+    });
+    
+    window.addEventListener('popstate', (event) => {
+        if (event.state && event.state.section) {
+            navigateTo(event.state.section);
+        } else {
+            navigateTo('produtos');
+        }
     });
 
     function initialNavigation() {
         const hash = window.location.hash.substring(1);
         const sectionToShow = hash || 'produtos';
         navigateTo(sectionToShow);
-        if (sectionToShow === 'produtos') {
-            document.querySelectorAll('.category-filter-btn').forEach(btn => btn.classList.remove('active'));
-            const todosButton = document.querySelector('.category-filter-btn[data-category="all"]');
-            if (todosButton) {
-                todosButton.classList.add('active');
-            }
-            currentCategory = 'all';
-            filtrarProdutosPorCategoriaETexto();
-        }
+        history.replaceState({section: sectionToShow}, '', `#${sectionToShow}`);
     }
 
-    window.addEventListener('hashchange', initialNavigation);
 
     if (mainHeader) {
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 60) {
+            if (window.pageYOffset > 50) {
                 mainHeader.classList.add('scrolled');
             } else {
                 mainHeader.classList.remove('scrolled');
@@ -86,9 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    if (contatoButton) {
-        contatoButton.addEventListener('click', () => abrirModal(modalContato));
-    }
+    [contatoButton, contatoButtonMobile].forEach(btn => {
+        if(btn) {
+            btn.addEventListener('click', () => abrirModal(modalContato));
+        }
+    });
 
     if (modalContato) {
         modalContato.addEventListener('click', function(event) {
@@ -104,13 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
         productCards.forEach(card => {
             const productCategory = card.dataset.category;
             const tituloProduto = card.querySelector('.produto-titulo')?.textContent.toLowerCase();
-            const descricaoProduto = card.querySelector('.produto-descricao-curta')?.textContent.toLowerCase();
             const matchesCategory = (currentCategory === 'all' || productCategory === currentCategory);
-            const matchesSearch = (!searchTerm ||
-                (tituloProduto && tituloProduto.includes(searchTerm)) ||
-                (descricaoProduto && descricaoProduto.includes(searchTerm)));
+            const matchesSearch = (!searchTerm || (tituloProduto && tituloProduto.includes(searchTerm)));
+            
             if (matchesCategory && matchesSearch) {
-                card.style.display = "";
+                card.style.display = "flex";
             } else {
                 card.style.display = "none";
             }
@@ -152,35 +152,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const elementsToAnimate = document.querySelectorAll('.animate-scroll');
-    if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show-scroll');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-        elementsToAnimate.forEach(el => observer.observe(el));
-    } else {
-        elementsToAnimate.forEach(el => el.classList.add('show-scroll'));
-    }
-
     if (scrollToTopBtn) {
         window.addEventListener('scroll', () => {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
                 scrollToTopBtn.classList.add('show');
             } else {
                 scrollToTopBtn.classList.remove('show');
             }
         });
         scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
@@ -188,6 +169,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
+    
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', () => {
+            const isVisible = mobileNavMenu.style.display === 'flex';
+            mobileNavMenu.style.display = isVisible ? 'none' : 'flex';
+        });
+    }
 
     initialNavigation();
+    filtrarProdutosPorCategoriaETexto();
 });

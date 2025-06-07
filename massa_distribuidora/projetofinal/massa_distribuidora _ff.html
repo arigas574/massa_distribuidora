@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Massa Distribuidora</title>
+    <link rel="icon" href="img/image_Pippit_202505072106.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header id="main-header">
+        <div class="container header-container">
+            <img src="img/image_Pippit_202505072106.png" alt="Massa Distribuidora Logo" class="logo" />
+            <nav>
+                <a href="#sobre" data-section="sobre">Sobre</a>
+                <a href="#produtos" data-section="produtos">Produtos</a>
+                <a href="#parceiros" data-section="parceiros">Parceiros</a>
+            </nav>
+            <button id="btn-contato">Contato</button>
+        </div>
+    </header>
+
+    <div class="header-spacer"></div>
+
+    <section id="sobre" class="section hidden fade-in">
+        <div class="container section-content animate-scroll">
+            <h3 class="section-title">Quem somos</h3>
+            <p class="sobre-descricao">
+                Somos distribuidores exclusivos da D'Itália, levando a qualidade e tradição desta marca gaúcha aos pontos de venda da região Noroeste e Missões do RS. Nossa paixão é entregar produtos frescos e saborosos, construindo parcerias de confiança com cada cliente.
+            </p>
+            <p class="quote-highlight">Levando qualidade e tradição para sua mesa!</p>
+        </div>
+    </section>
+
+    <section id="produtos" class="section hidden fade-in bg-light">
+        <div class="container section-content">
+            <h3 class="section-title text-center animate-scroll green-text">Nossos Produtos</h3>
+            <input type="text" id="search-input" placeholder="Pesquisar produto por nome..." />
+
+            <div id="category-filters" class="category-filters-container animate-scroll">
+                <button class="category-filter-btn active" data-category="all">Todos</button>
+                <button class="category-filter-btn" data-category="Presunto">Presunto</button>
+                <button class="category-filter-btn" data-category="Mortadela">Mortadela</button>
+                <button class="category-filter-btn" data-category="Bacon">Bacon</button>
+                <button class="category-filter-btn" data-category="Calabresa">Calabresa</button>
+                <button class="category-filter-btn" data-category="Massa Pastel e Lasanha">Massa Pastel e Lasanha</button>
+                <button class="category-filter-btn" data-category="Massa Fresca">Massa Fresca</button>
+                <button class="category-filter-btn" data-category="Massa para Pizza">Massa para Pizza</button>
+                <button class="category-filter-btn" data-category="Massas Folhadas">Massas Folhadas</button>
+                <button class="category-filter-btn" data-category="Massa Colonial">Massa Colonial</button>
+                <button class="category-filter-btn" data-category="Recheados">Recheados</button>
+                <button class="category-filter-btn" data-category="Diversos">Diversos</button>
+            </div>
+
+            <div id="produtos-list" class="grid-container animate-scroll">
+                <div class="produto-card produto-item" data-produto-id="presunto_fatiado_150g" data-category="Presunto">
+                    <div class="produto-imagem-container">
+                        <img src="img/presunto 150.jpg" alt="Presunto Fatiado Progresso 150g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Presunto Fatiado Progresso 150g</h4>
+                        <p class="produto-descricao-curta">Presunto cozido fatiado, 150g, sem capa de gordura.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="presunto_fatiado_350g" data-category="Presunto">
+                    <div class="produto-imagem-container">
+                        <img src="img/presunto 350.jpg" alt="Presunto Fatiado Progresso 350g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Presunto Fatiado Progresso 350g</h4>
+                        <p class="produto-descricao-curta">Presunto cozido fatiado, 350g, sem capa de gordura.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="presunto_fatiado_1kg" data-category="Presunto">
+                    <div class="produto-imagem-container">
+                        <img src="img/presunto kg.jpg.crdownload.jpeg" alt="Presunto Fatiado Progresso 1kg">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Presunto Fatiado Progresso 1kg</h4>
+                        <p class="produto-descricao-curta">Presunto cozido fatiado, 1kg, sem capa de gordura.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="presunto_peca_milan" data-category="Presunto">
+                    <div class="produto-imagem-container">
+                        <img src="img/presunto peça.jpg" alt="Presunto Peça Progresso Milan">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Presunto Peça Progresso Milan</h4>
+                        <p class="produto-descricao-curta">Presunto cozido peça, sem capa de gordura.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="mortadela_cubos_150g" data-category="Mortadela">
+                    <div class="produto-imagem-container">
+                        <img src="img/mortadela 150.jpg" alt="Mortadela com Cubos de Gordura Progresso 150g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Mortadela com Cubos de Gordura Progresso 150g</h4>
+                        <p class="produto-descricao-curta">Mortadela com cubos de gordura fatiada, 150g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="mortadela_cubos_500g" data-category="Mortadela">
+                    <div class="produto-imagem-container">
+                        <img src="img/mortadela 500.jpg" alt="Mortadela com Cubos de Gordura Progresso 500g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Mortadela com Cubos de Gordura Progresso 500g</h4>
+                        <p class="produto-descricao-curta">Mortadela com cubos de gordura fatiada, 500g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="mortadela_sem_cubos_150g" data-category="Mortadela">
+                    <div class="produto-imagem-container">
+                        <img src="img/mortadela 150 s cubos.jpg" alt="Mortadela sem Cubos de Gordura Progresso 150g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Mortadela sem Cubos de Gordura Progresso 150g</h4>
+                        <p class="produto-descricao-curta">Mortadela sem cubos de gordura fatiada, 150g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="mortadela_sem_cubos_500g" data-category="Mortadela">
+                    <div class="produto-imagem-container">
+                        <img src="img/mortadela 500 s cubos.jpg" alt="Mortadela sem Cubos de Gordura Progresso 500g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Mortadela sem Cubos de Gordura Progresso 500g</h4>
+                        <p class="produto-descricao-curta">Mortadela sem cubos de gordura fatiada, 500g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="mortadela_bologna_200g" data-category="Mortadela">
+                    <div class="produto-imagem-container">
+                        <img src="img/mortadela 200.jpg" alt="Mortadela Bologna Progresso 200g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Mortadela Bologna Progresso 200g</h4>
+                        <p class="produto-descricao-curta">Mortadela tipo Bologna fatiada, 200g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="bacon_cubos_600g" data-category="Bacon">
+                    <div class="produto-imagem-container">
+                        <img src="img/bacon 600.jpg" alt="Bacon em Cubos Progresso 600g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Bacon em Cubos Progresso 600g</h4>
+                        <p class="produto-descricao-curta">Bacon em cubos, 600g</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="bacon_manta" data-category="Bacon">
+                    <div class="produto-imagem-container">
+                        <img src="img/bacon manta.jpg" alt="Bacon Manta">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Bacon Manta</h4>
+                        <p class="produto-descricao-curta">Bacon manta.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="calabresa_fatiada_500g" data-category="Calabresa">
+                    <div class="produto-imagem-container">
+                        <img src="img/calabresa 500.jpg" alt="Calabresa Fatiada Progresso 500g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Calabresa Fatiada Progresso 500g</h4>
+                        <p class="produto-descricao-curta">Linguiça calabresa fatiada, 500g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="calabresa_fatiada_1_2kg" data-category="Calabresa">
+                    <div class="produto-imagem-container">
+                        <img src="img/calabresa 1,2.jpg" alt="Calabresa Fatiada Progresso 1,2kg">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Calabresa Fatiada Progresso 1,2kg</h4>
+                        <p class="produto-descricao-curta">Linguiça calabresa fatiada, 1,2kg.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_pastel_disco_grande_500g" data-category="Massa Pastel e Lasanha">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa dg 500.jpg" alt="Massa para Pastel Disco Grande D'Itália 500g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa para Pastel Disco Grande D'Itália 500g</h4>
+                        <p class="produto-descricao-curta">Massa para pastel disco grande, 500g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_pastel_disco_lanche_500g" data-category="Massa Pastel e Lasanha">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa dl 500.jpg" alt="Massa para Pastel Disco Lanche D'Itália 500g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa para Pastel Disco Lanche D'Itália 500g</h4>
+                        <p class="produto-descricao-curta">Massa para pastel disco lanche, 500g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_pastel_disco_pequeno_200g" data-category="Massa Pastel e Lasanha">
+                    <div class="produto-imagem-container">
+                        <img src="img/DP.jpeg" alt="Massa para Pastel Disco Pequeno D'Itália 200g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa para Pastel Disco Pequeno D'Itália 200g</h4>
+                        <p class="produto-descricao-curta">Massa para pastel disco pequeno, 200g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_pastel_disco_medio_200g" data-category="Massa Pastel e Lasanha">
+                    <div class="produto-imagem-container">
+                        <img src="img/dm.png" alt="Massa para Pastel Disco Médio D'Itália 200g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa para Pastel Disco Médio D'Itália 200g</h4>
+                        <p class="produto-descricao-curta">Massa para pastel disco médio, 200g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_pastel_rolo_2kg" data-category="Massa Pastel e Lasanha">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa em rolo.jpg" alt="Massa para Pastel em Rolo D'Itália 2kg">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa para Pastel em Rolo D'Itália 2kg</h4>
+                        <p class="produto-descricao-curta">Massa para pastel em rolo, 2kg.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_lasanha_500g" data-category="Massa Pastel e Lasanha">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa para lasanha.jpg" alt="Massa para Lasanha D'Itália 500g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa para Lasanha D'Itália 500g</h4>
+                        <p class="produto-descricao-curta">Massa para lasanha, 500g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_fresca_talharim_500g" data-category="Massa Fresca">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa talharim 500.jpg" alt="Massa Fresca Talharim D'Itália 500g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa Fresca Talharim D'Itália 500g</h4>
+                        <p class="produto-descricao-curta">Massa fresca com ovos talharim, 500g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_fresca_talharim_1kg" data-category="Massa Fresca">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa talharim 1kg.jpg" alt="Massa Fresca Talharim D'Itália 1kg">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa Fresca Talharim D'Itália 1kg</h4>
+                        <p class="produto-descricao-curta">Massa caseira e fresca com ovos talharim, 1kg.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_fresca_espaguete_500g" data-category="Massa Fresca">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa espaguete 500.jpg" alt="Massa Fresca Espaguete D'Itália 500g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa Fresca Espaguete D'Itália 500g</h4>
+                        <p class="produto-descricao-curta">Massa fresca com ovos espaguete, 500g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_fresca_espaguete_1kg" data-category="Massa Fresca">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa espaguete 1kg.jpg" alt="Massa Fresca Espaguete D'Itália 1kg">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa Fresca Espaguete D'Itália 1kg</h4>
+                        <p class="produto-descricao-curta">Massa caseira e fresca com ovos espaguete, 1kg.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_pizza_180g" data-category="Massa para Pizza">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa pizza 180.jpg" alt="Massa pré Pizza D'Itália 180g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa pré Pizza D'Itália 180g</h4>
+                        <p class="produto-descricao-curta">Massa para pizza pré-assada grande, 180g</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_pizza_250g" data-category="Massa para Pizza">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa pizza 250.jpg" alt="Massa pré Pizza D'Itália 250g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa pré Pizza D'Itália 250g</h4>
+                        <p class="produto-descricao-curta">Massa para pizza pré-assada família, 250g</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_folhada_quadrada_300g" data-category="Massas Folhadas">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa folhada 300.jpg" alt="Massa Folhada Quadrada D'Itália, 300g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa Folhada Quadrada D'Itália, 300g</h4>
+                        <p class="produto-descricao-curta">Massa folhada em lâminas quadrada, 300g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_folhada_rolo_300g" data-category="Massas Folhadas">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa folhada rolo 300.jpg" alt="Massa Folhada Rolo D'Itália, 300g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa Folhada Rolo D'Itália, 300g</h4>
+                        <p class="produto-descricao-curta">Massa folhada laminada rolo, 300g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_colonial_disco_grande_900g" data-category="Massa Colonial">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa colonial 900.jpg" alt="Massa para Pastel Disco Grande Colonial D'Itália, 900g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa para Pastel Disco Grande Colonial D'Itália, 900g</h4>
+                        <p class="produto-descricao-curta">Massa para pastel caseira tipo colonial disco grande, 900g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_colonial_disco_lanche_400g" data-category="Massa Colonial">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa colonial 400.jpg" alt="Massa para Pastel Disco Lanche Colonial D'Itália, 400g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa para Pastel Disco Lanche Colonial D'Itália, 400g</h4>
+                        <p class="produto-descricao-curta">Massa para pastel caseira tipo colonial disco lanche, 400g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_colonial_1kg" data-category="Massa Colonial">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa colonial 1kg.jpg" alt="Massa para Pastel Colonial D'Itália, 1kg">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa para Pastel Colonial D'Itália, 1kg</h4>
+                        <p class="produto-descricao-curta">Massa para pastel caseira tipo colonial, 1kg.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_colonial_quadrada_2kg" data-category="Massa Colonial">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa colonial 2kg.jpg" alt="Massa para Pastel Quadrada Colonial D'Itália, 2kg">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa para Pastel Quadrada Colonial D'Itália, 2kg</h4>
+                        <p class="produto-descricao-curta">Massa para pastel caseira tipo colonial quadrada, 2kg.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="massa_colonial_rolo_2kg" data-category="Massa Colonial">
+                    <div class="produto-imagem-container">
+                        <img src="img/massa para pastel em rolo.jpg" alt="Massa para Pastel em Rolo Colonial D'Itália, 2kg">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa para Pastel em Rolo Colonial D'Itália, 2kg</h4>
+                        <p class="produto-descricao-curta">Massa para pastel caseira tipo colonial em rolo, 2kg.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="capeletti_frango_300g" data-category="Recheados">
+                    <div class="produto-imagem-container">
+                        <img src="img/capeletti frango.jpg" alt="Capeletti de Frango D'Itália, 300g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Capeletti de Frango D'Itália, 300g</h4>
+                        <p class="produto-descricao-curta">Massa recheada capeletti sabor frango, 300g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="capeletti_carne_300g" data-category="Recheados">
+                    <div class="produto-imagem-container">
+                        <img src="img/capeletti carne.jpg" alt="Capeletti de Carne D'Itália, 300g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Capeletti de Carne D'Itália, 300g</h4>
+                        <p class="produto-descricao-curta">Massa recheada capeletti sabor carne, 300g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="ravioli_queijo_300g" data-category="Recheados">
+                    <div class="produto-imagem-container">
+                        <img src="img/ravioli.jpg" alt="Ravioli de Queijo D'Itália, 300g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Ravioli de Queijo D'Itália, 300g</h4>
+                        <p class="produto-descricao-curta">Massa recheada ravioli sabor queijo, 300g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="canudinhos_200g" data-category="Diversos">
+                    <div class="produto-imagem-container">
+                        <img src="img/canudinhos.jpg" alt="Canudinhos D'Itália 200g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Canudinhos D'Itália 200g</h4>
+                        <p class="produto-descricao-curta">Canudinhos prontos para rechear, 200g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="pao_de_alho_400g" data-category="Diversos">
+                    <div class="produto-imagem-container">
+                        <img src="img/pão de alho.jpg" alt="Pão de Alho D'Itália 400g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Pão de Alho D'Itália 400g</h4>
+                        <p class="produto-descricao-curta">Pão de alho recheado com 5 unidades, 400g.</p>
+                    </div>
+                </div>
+                <div class="produto-card produto-item" data-produto-id="lanche_fatiado_150g" data-category="Diversos">
+                    <div class="produto-imagem-container">
+                        <img src="img/lanche 150.jpg" alt="Lanche Fatiado Progresso 150g">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Lanche Fatiado Progresso 150g</h4>
+                        <p class="produto-descricao-curta">Lanche fatiado, 150g.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="parceiros" class="section hidden fade-in">
+        <div class="container section-content text-center animate-scroll">
+            <h3 class="section-title">Parceiros</h3>
+            <div class="parceiros-container">
+                <div class="parceiro-card">
+                    <img src="img/logo.jpg" alt="Massas D'Itália" class="parceiro-imagem">
+                    <h4 class="parceiro-nome green-text">Massas D'Itália</h4>
+                </div>
+                <div class="parceiro-card">
+                    <img src="img/logo.jpg" alt="Progresso Alimentos" class="parceiro-imagem">
+                    <h4 class="parceiro-nome green-text">Progresso Alimentos</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="image-lightbox" class="lightbox">
+        <span class="lightbox-close-btn">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <div id="modal-contato" class="modal">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h3 class="modal-title green-text">Contato</h3>
+            <p class="contato-info">📧 massadistribuidorars@gmail.com</p>
+            <p class="contato-info">📱 (51) 99593-2890</p>
+            <a href="https://www.instagram.com/massadistribuidora" target="_blank" class="instagram-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="instagram-icon" />
+                Instagram
+            </a>
+        </div>
+    </div>
+
+    <footer id="main-footer">
+        <div class="footer-content container">
+            <img src="img/image_Pippit_202505072106.png" alt="Massa Distribuidora Logo Rodapé" class="footer-logo" />
+            <p>&copy; <span id="current-year"></span> Massa Distribuidora. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Voltar ao topo">
+        <img src="img/image_Pippit_202505072106.png" alt="Voltar ao topo" />
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

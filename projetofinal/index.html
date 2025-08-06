@@ -12,12 +12,19 @@
     <header id="main-header">
         <div class="container header-container">
             <img src="img/image_Pippit_202505072106.png" alt="Massa Distribuidora Logo" class="logo" />
-            <nav>
+            <nav id="main-nav">
                 <a href="#sobre" data-section="sobre">Sobre</a>
                 <a href="#produtos" data-section="produtos">Produtos</a>
                 <a href="#parceiros" data-section="parceiros">Parceiros</a>
             </nav>
-            <button id="btn-contato">Contato</button>
+            <button id="btn-contato" class="desktop-only">Contato</button>
+            <button id="mobile-menu-toggle" class="mobile-only">☰</button>
+        </div>
+        <div id="mobile-nav-menu" class="mobile-nav">
+            <a href="#sobre" data-section="sobre">Sobre</a>
+            <a href="#produtos" data-section="produtos">Produtos</a>
+            <a href="#parceiros" data-section="parceiros">Parceiros</a>
+            <button id="btn-contato-mobile">Contato</button>
         </div>
     </header>
 
@@ -54,7 +61,7 @@
             </div>
 
             <div id="produtos-list" class="grid-container animate-scroll">
-                <div class="produto-card produto-item" data-produto-id="presunto_fatiado_150g" data-category="Presunto">
+                 <div class="produto-card produto-item" data-produto-id="presunto_fatiado_150g" data-category="Presunto">
                     <div class="produto-imagem-container">
                         <img src="img/presunto 150.jpg" alt="Presunto Fatiado Progresso 150g">
                     </div>
@@ -216,6 +223,15 @@
                         <p class="produto-descricao-curta">Massa para pastel em rolo, 2kg.</p>
                     </div>
                 </div>
+                <div class="produto-card produto-item" data-produto-id="massa_pastel_rolo_1kg" data-category="Massa Pastel e Lasanha">
+                    <div class="produto-imagem-container">
+                        <img src="img/rolo 1kg.jpg" alt="Massa para Pastel em Rolo D'Itália 1kg">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa para Pastel em Rolo D'Itália 1kg</h4>
+                        <p class="produto-descricao-curta">Massa para pastel em rolo, 1kg.</p>
+                    </div>
+                </div>                
                 <div class="produto-card produto-item" data-produto-id="massa_lasanha_500g" data-category="Massa Pastel e Lasanha">
                     <div class="produto-imagem-container">
                         <img src="img/massa para lasanha.jpg" alt="Massa para Lasanha D'Itália 500g">

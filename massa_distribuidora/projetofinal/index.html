@@ -12,12 +12,19 @@
     <header id="main-header">
         <div class="container header-container">
             <img src="img/image_Pippit_202505072106.png" alt="Massa Distribuidora Logo" class="logo" />
-            <nav>
+            <nav id="main-nav">
                 <a href="#sobre" data-section="sobre">Sobre</a>
                 <a href="#produtos" data-section="produtos">Produtos</a>
                 <a href="#parceiros" data-section="parceiros">Parceiros</a>
             </nav>
-            <button id="btn-contato">Contato</button>
+            <button id="btn-contato" class="desktop-only">Contato</button>
+            <button id="mobile-menu-toggle" class="mobile-only">☰</button>
+        </div>
+        <div id="mobile-nav-menu" class="mobile-nav">
+            <a href="#sobre" data-section="sobre">Sobre</a>
+            <a href="#produtos" data-section="produtos">Produtos</a>
+            <a href="#parceiros" data-section="parceiros">Parceiros</a>
+            <button id="btn-contato-mobile">Contato</button>
         </div>
     </header>
 
@@ -27,9 +34,9 @@
         <div class="container section-content animate-scroll">
             <h3 class="section-title">Quem somos</h3>
             <p class="sobre-descricao">
-                Somos distribuidores exclusivos da D'Itália, levando a qualidade e tradição desta marca gaúcha aos pontos de venda da região Noroeste e Missões do RS. Nossa paixão é entregar produtos frescos e saborosos, construindo parcerias de confiança com cada cliente.
+                Somos distribuidores nas regiões Noroeste e Missões, levando com exclusividade em mais de 50 cidades a tradição e qualidade dos produtos D'Itália aos melhores pontos de venda. Agregando ao nosso mix, trabalhamos com os embutidos da marca Progresso tanto na linha institucional quanto no food.
             </p>
-            <p class="quote-highlight">Levando qualidade e tradição para sua mesa!</p>
+            <p class="quote-highlight">Tradição, qualidade e excelência no atendimento é na Massa!</p>
         </div>
     </section>
 
@@ -54,7 +61,7 @@
             </div>
 
             <div id="produtos-list" class="grid-container animate-scroll">
-                <div class="produto-card produto-item" data-produto-id="presunto_fatiado_150g" data-category="Presunto">
+                 <div class="produto-card produto-item" data-produto-id="presunto_fatiado_150g" data-category="Presunto">
                     <div class="produto-imagem-container">
                         <img src="img/presunto 150.jpg" alt="Presunto Fatiado Progresso 150g">
                     </div>
@@ -207,6 +214,15 @@
                         <p class="produto-descricao-curta">Massa para pastel disco médio, 200g.</p>
                     </div>
                 </div>
+                <div class="produto-card produto-item" data-produto-id="massa_pastel_rolo_1kg" data-category="Massa Pastel e Lasanha">
+                    <div class="produto-imagem-container">
+                        <img src="img/rolo 1kg.jpg" alt="Massa para Pastel em Rolo D'Itália 1kg">
+                    </div>
+                    <div class="produto-text-content">
+                        <h4 class="produto-titulo green-text">Massa para Pastel em Rolo D'Itália 1kg</h4>
+                        <p class="produto-descricao-curta">Massa para pastel em rolo, 1kg.</p>
+                    </div>
+                </div>                
                 <div class="produto-card produto-item" data-produto-id="massa_pastel_rolo_2kg" data-category="Massa Pastel e Lasanha">
                     <div class="produto-imagem-container">
                         <img src="img/massa em rolo.jpg" alt="Massa para Pastel em Rolo D'Itália 2kg">
@@ -405,11 +421,11 @@
             <h3 class="section-title">Parceiros</h3>
             <div class="parceiros-container">
                 <div class="parceiro-card">
-                    <img src="img/logo.jpg" alt="Massas D'Itália" class="parceiro-imagem">
+                    <img src="img/logo_ditalia.jpg" alt="Massas D'Itália" class="parceiro-imagem">
                     <h4 class="parceiro-nome green-text">Massas D'Itália</h4>
                 </div>
                 <div class="parceiro-card">
-                    <img src="img/logo.jpg" alt="Progresso Alimentos" class="parceiro-imagem">
+                    <img src="img/logo_progresso.jpg" alt="Progresso Alimentos" class="parceiro-imagem">
                     <h4 class="parceiro-nome green-text">Progresso Alimentos</h4>
                 </div>
             </div>
